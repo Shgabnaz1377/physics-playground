@@ -19,7 +19,16 @@ export interface SimEntry {
 }
 
 /** Every simulation in the gallery, in display order. */
-export const sims: SimEntry[] = []
+export const sims: SimEntry[] = [
+  {
+    slug: 'wave',
+    title: 'Wave interference',
+    tagline: 'The 2D wave equation through single and double slits, with a far-field comparison.',
+    topics: ['PDE', 'leapfrog', 'CFL'],
+    load: () => import('./wave/WaveSim.vue'),
+    thumb: () => import('./wave/thumb'),
+  },
+]
 
 export function findSim(slug: string): SimEntry | undefined {
   return sims.find((s) => s.slug === slug)
