@@ -52,6 +52,14 @@ export const sims: SimEntry[] = [
     load: () => import('./heat/HeatSim.vue'),
     thumb: () => import('./heat/thumb'),
   },
+  {
+    slug: 'lennard-jones',
+    title: 'Lennard-Jones gas',
+    tagline: 'Molecular dynamics with velocity Verlet; speeds relax to Maxwell–Boltzmann.',
+    topics: ['molecular dynamics', 'Verlet', 'statistical mechanics'],
+    load: () => import('./gas/GasSim.vue'),
+    thumb: () => import('./gas/thumb'),
+  },
 ]
 
 export function findSim(slug: string): SimEntry | undefined {
