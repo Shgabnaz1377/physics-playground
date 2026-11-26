@@ -60,6 +60,7 @@ label {
   color: var(--fg);
 }
 output {
+  white-space: nowrap;
   color: var(--fg-muted);
   font-size: 0.82rem;
 }
