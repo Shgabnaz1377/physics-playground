@@ -63,7 +63,6 @@ onBeforeUnmount(() => {
         <button
           type="button"
           class="btn primary"
-          :aria-pressed="running"
           aria-keyshortcuts="Space"
           @click="running = !running"
         >
