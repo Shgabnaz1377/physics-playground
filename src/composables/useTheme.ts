@@ -37,6 +37,7 @@ export interface CanvasColors {
   fg: string
   muted: string
   accent: string
+  dark: boolean
   series: [string, string, string, string]
 }
 
@@ -50,6 +51,7 @@ export function readCanvasColors(): CanvasColors {
     fg: v('--canvas-fg'),
     muted: v('--fg-muted'),
     accent: v('--accent'),
+    dark: document.documentElement.dataset.theme === 'dark',
     series: [v('--series-1'), v('--series-2'), v('--series-3'), v('--series-4')],
   }
 }
