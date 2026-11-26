@@ -44,6 +44,14 @@ export const sims: SimEntry[] = [
     load: () => import('./ising/IsingSim.vue'),
     thumb: () => import('./ising/thumb'),
   },
+  {
+    slug: 'heat',
+    title: 'Heat diffusion',
+    tagline: 'Draw walls, radiators and windows; total heat is conserved when the box is closed.',
+    topics: ['PDE', 'FTCS', 'conservation'],
+    load: () => import('./heat/HeatSim.vue'),
+    thumb: () => import('./heat/thumb'),
+  },
 ]
 
 export function findSim(slug: string): SimEntry | undefined {
