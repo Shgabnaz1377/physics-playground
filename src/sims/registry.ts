@@ -28,6 +28,14 @@ export const sims: SimEntry[] = [
     load: () => import('./wave/WaveSim.vue'),
     thumb: () => import('./wave/thumb'),
   },
+  {
+    slug: 'double-pendulum',
+    title: 'Double pendulum',
+    tagline: 'RK4 integration, energy-drift readout and two nearby trajectories diverging.',
+    topics: ['ODE', 'RK4', 'chaos'],
+    load: () => import('./pendulum/PendulumSim.vue'),
+    thumb: () => import('./pendulum/thumb'),
+  },
 ]
 
 export function findSim(slug: string): SimEntry | undefined {
