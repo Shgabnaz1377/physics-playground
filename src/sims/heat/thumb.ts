@@ -1,11 +1,11 @@
 import type { ThumbFactory } from '@/sims/registry'
 import { INFERNO, buildLut, lutIndex, packRgba } from '@/lib/colormap'
-import { Cell, buildPreset, paintDisc, stepHeat } from '@/physics/heat'
+import { Cell, buildPreset, stepHeat } from '@/physics/heat'
 
 export const createThumb: ThumbFactory = () => {
   const nx = 96
   const ny = 60
-  const g = buildPreset(nx, ny, 'maze')
+  let g = buildPreset(nx, ny, 'radiator')
   const off = document.createElement('canvas')
   off.width = nx
   off.height = ny
@@ -17,13 +17,11 @@ export const createThumb: ThumbFactory = () => {
   return {
     step(dt) {
       t += dt
-      for (let k = 0; k < 12; k++) stepHeat(g, 0.25)
-      // Restart periodically so the card keeps showing heat flowing through the maze.
-      if (t > 14) {
+      for (let k = 0; k < 6; k++) stepHeat(g, 0.25)
+      // Restart periodically so the card keeps showing heat spreading from the radiator.
+      if (t > 12) {
         t = 0
-        paintDisc(g, nx / 2, ny / 2, nx, (i) => {
-          if (g.kind[i] === Cell.Conductor) g.u[i] = 0
-        })
+        g = buildPreset(nx, ny, 'radiator')
       }
     },
     draw(ctx, w, h, colors) {

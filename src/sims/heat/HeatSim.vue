@@ -209,7 +209,7 @@ const toolLabels = {
 
     <template #readouts>
       <span>Σu = <b>{{ stats.q.toFixed(3) }}</b></span>
-      <span>relative change of Σu since last edit = <b>{{ stats.dq.toExponential(2) }}</b></span>
+      <span v-if="!stats.fixed">relative change of Σu since last edit = <b>{{ stats.dq.toExponential(2) }}</b></span>
       <span>mean u = <b>{{ stats.mean.toFixed(4) }}</b></span>
       <span>fixed cells = <b>{{ stats.fixed }}</b></span>
       <span>{{ stats.fixed ? 'reservoirs exchange heat' : 'closed system: Σu is conserved' }}</span>
