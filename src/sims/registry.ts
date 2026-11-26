@@ -60,6 +60,14 @@ export const sims: SimEntry[] = [
     load: () => import('./gas/GasSim.vue'),
     thumb: () => import('./gas/thumb'),
   },
+  {
+    slug: 'optimizers',
+    title: 'Optimizer race',
+    tagline: 'SGD, momentum, RMSProp and Adam on Rosenbrock, saddles and multimodal surfaces.',
+    topics: ['optimisation', 'Adam', 'machine learning'],
+    load: () => import('./optimizer/OptimizerSim.vue'),
+    thumb: () => import('./optimizer/thumb'),
+  },
 ]
 
 export function findSim(slug: string): SimEntry | undefined {
