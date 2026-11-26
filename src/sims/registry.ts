@@ -68,6 +68,14 @@ export const sims: SimEntry[] = [
     load: () => import('./optimizer/OptimizerSim.vue'),
     thumb: () => import('./optimizer/thumb'),
   },
+  {
+    slug: 'fourier',
+    title: 'Fourier epicycles',
+    tagline: 'Draw any closed curve and rebuild it from rotating circles; watch the error fall.',
+    topics: ['Fourier series', 'DFT', 'Parseval'],
+    load: () => import('./fourier/FourierSim.vue'),
+    thumb: () => import('./fourier/thumb'),
+  },
 ]
 
 export function findSim(slug: string): SimEntry | undefined {
