@@ -1,0 +1,40 @@
+{
+  "name": "physics-playground",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Interactive physics and data simulations that run in the browser.",
+  "license": "MIT",
+  "author": "Shabnaz Ghaffari",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --build && vite build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --build --force",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "katex": "^0.19.1",
+    "vue": "^3.5.46",
+    "vue-router": "^5.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.4",
+    "@vitejs/plugin-vue": "^6.0.11",
+    "@vue/eslint-config-typescript": "^14.9.0",
+    "@vue/tsconfig": "^0.9.1",
+    "eslint": "^10.15.0",
+    "eslint-plugin-vue": "^10.12.1",
+    "jiti": "^2.7.0",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.74.0",
+    "vite": "^8.4.0",
+    "vitest": "^5.1.2",
+    "vue-tsc": "^3.3.14"
+  }
+}
