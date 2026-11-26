@@ -36,6 +36,14 @@ export const sims: SimEntry[] = [
     load: () => import('./pendulum/PendulumSim.vue'),
     thumb: () => import('./pendulum/thumb'),
   },
+  {
+    slug: 'ising',
+    title: '2D Ising model',
+    tagline: 'Metropolis Monte Carlo in a Web Worker, with a temperature scan against Onsager.',
+    topics: ['Monte Carlo', 'phase transition', 'Web Worker'],
+    load: () => import('./ising/IsingSim.vue'),
+    thumb: () => import('./ising/thumb'),
+  },
 ]
 
 export function findSim(slug: string): SimEntry | undefined {
