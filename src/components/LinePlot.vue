@@ -123,7 +123,9 @@ function draw() {
     c.strokeStyle = col.series[s.color % 4]!
     c.beginPath()
     let started = false
-    for (let i = 0; i < n; i++) {
+    // Draw at most about two samples per horizontal pixel.
+    const stride = Math.max(1, Math.floor(n / (2 * pw)))
+    for (let i = 0; i < n; i += stride) {
       const y = tf(s.at(i))
       if (!Number.isFinite(y)) {
         started = false
